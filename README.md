@@ -12,5 +12,5 @@ Battery Availability: 86.3%
 ## How to use
 
 ```bash
-curl -sL https://github.com/uetchy/mac-battery-inspector/raw/mac-battery-inspector.py | python
+curl -sL https://github.com/uetchy/mac-battery-inspector/raw/master/mac-battery-inspector.py | python
 ```
