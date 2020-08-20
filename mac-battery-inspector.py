@@ -13,14 +13,15 @@ def getIOReg():
 
 def parseIOReg(rawResult):
     maxCapacity = int(re.search(r'"MaxCapacity" = (\d+)\n', rawResult).group(1))
-    designCapacity = int(re.search(r'"DesignCapacity" = (\d+)\n', rawResult).group(1))
+    designCapacity = int(
+        re.search(r'"DesignCapacity" = (\d+)\n', rawResult).group(1))
     cycleCount = int(re.search(r'"Cycle Count"=(\d+)\}', rawResult).group(1))
     return [maxCapacity, designCapacity, cycleCount]
 
 
 if __name__ == '__main__':
     maxCapacity, designCapacity, cycleCount = parseIOReg(getIOReg())
-    print('Max Capacity:', maxCapacity, 'mAh')
+    print('Current Max Capacity:', maxCapacity, 'mAh')
     print('Design Capacity:', designCapacity, 'mAh')
     print('Cycle Count:', cycleCount, 'cycles')
     print('Cycle Count Remaining: {} cycles - {}% reached'.format(
